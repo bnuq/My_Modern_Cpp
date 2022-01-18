@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sect_9\109_Dynamic_Cast.cpp" />
+    <ClCompile Include="Sect_9\111_Multiple_Inheritance.cpp" />
     <ClCompile Include="Sect_9\Account.cpp" />
     <ClCompile Include="Sect_9\Checking.cpp" />
     <ClCompile Include="Sect_9\Savings.cpp" />

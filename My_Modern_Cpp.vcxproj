@@ -19,17 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sect_9\111_Multiple_Inheritance.cpp" />
-    <ClCompile Include="Sect_9\Account.cpp" />
-    <ClCompile Include="Sect_9\Checking.cpp" />
-    <ClCompile Include="Sect_9\Savings.cpp" />
-    <ClCompile Include="Sect_9\Transaction.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Sect_9\Account.h" />
-    <ClInclude Include="Sect_9\Checking.h" />
-    <ClInclude Include="Sect_9\Savings.h" />
-    <ClInclude Include="Sect_9\Transaction.h" />
+    <ClCompile Include="Sect_9\for_test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

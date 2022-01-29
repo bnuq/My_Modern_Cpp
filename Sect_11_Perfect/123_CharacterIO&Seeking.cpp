@@ -7,7 +7,7 @@
 
 void Write()
 {
-	std::ofstream out{ R"(./Sect_11/06_data.txt)" };
+	std::ofstream out{ R"(./Sect_11/123_data.txt)" };
 	if (!out)
 	{
 		std::cout << "Could not open file for writing" << std::endl;
@@ -26,7 +26,7 @@ void Write()
 
 void Read()
 {
-	std::ifstream input{ R"(./Sect_11/06_data.txt)" };
+	std::ifstream input{ R"(./Sect_11/123_data.txt)" };
 	if (!input)
 	{
 		std::cout << "Source file not found" << std::endl;
@@ -55,17 +55,17 @@ void Read()
 
 void UsingFstream()
 {
-	std::fstream stream{ R"(./Sect_11/06_file.txt)"};
+	std::fstream stream{ R"(./Sect_11/123_file.txt)"};
 	// 파일이 존재하지 않으면, 자동으로 만들지 않는다
 	if (!stream)
 	{
 		std::cout << "FILE DOSE NOT EXIST. CREATE ONE" << std::endl;
 
 		// 파일 직접 생성
-		std::ofstream out{ R"(./Sect_11/06_file.txt)" };
+		std::ofstream out{ R"(./Sect_11/123_file.txt)" };
 		out.close();
 		
-		stream.open(R"(./Sect_11/06_file.txt)");
+		stream.open(R"(./Sect_11/123_file.txt)");
 	}
 
 	stream << "File text : Hello World" << std::endl;

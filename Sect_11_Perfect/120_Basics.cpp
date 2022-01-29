@@ -4,7 +4,7 @@
 void Write() {
 	//std::ofstream out{ "data.txt" };
 	std::ofstream out{};
-	out.open(R"(./Sect_11/03_data.txt)");
+	out.open(R"(./Sect_11/120_data.txt)");
 
 	out << "Hello world" << std::endl;
 	out << 100 << std::endl;
@@ -14,7 +14,7 @@ void Write() {
 void Read() {
 	//std::ifstream input{ "data.txt" };
 	std::ifstream input{};
-	input.open(R"(./Sect_11/03_data.txt)");
+	input.open(R"(./Sect_11/120_data.txt)");
 	
 	std::string message;
 	std::getline(input, message);

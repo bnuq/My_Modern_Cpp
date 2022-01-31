@@ -18,7 +18,10 @@ public:
 		return m_pData;
 	}
 };
-//Partial specialization for value 80
+
+
+// Partial specialization for value 80
+// Partial specialization = Template Arguments 중 일부에 대해서만 specialization
 template<typename T>
 class PrettyPrinter<T, 80> {
 	T *m_pData;
@@ -35,6 +38,9 @@ public:
 		return m_pData;
 	}
 };
+
+
+// Smart Pointer 구현, RAII
 template<typename T>
 class SmartPointer {
 	T *m_ptr;
@@ -52,7 +58,10 @@ public:
 		delete m_ptr;
 	}
 };
-//Partial specialization for array types
+
+
+// Partial specialization for array types
+// 특정 타입일 때를 가정한 게 아니니가, explicit specialization 은 아니네
 template<typename T>
 class SmartPointer<T[]> {
 	T *m_ptr;
@@ -67,12 +76,17 @@ public:
 		delete[] m_ptr;
 	}
 };
+
+
 int main() {
 	int data = 800;
 	PrettyPrinter<int, 80> p{ &data };
 	p.Print();
-	SmartPointer<int[]> s1{ new int[5] };
-	s1[0] = 5;
+
+
+	SmartPointer<int[]> s1{ new int[5]{ 1,2,3,4,5 } };
+	
 	std::cout << s1[0] << std::endl;
+	std::cout << s1[2] << std::endl;
 	return 0;
 }

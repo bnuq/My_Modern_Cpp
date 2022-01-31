@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9E1EC84C-9BFE-4E92-8C96-C512633552EA}</ProjectGuid>
+    <ProjectGuid>{410963AC-36A0-452B-9A2F-5354B19DF018}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ClassTemplateExSpecialization</RootNamespace>
+    <RootNamespace>CaptureList</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

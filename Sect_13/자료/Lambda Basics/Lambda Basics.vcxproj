@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{775F7529-67F5-4ED6-AAA4-55C6697A6419}</ProjectGuid>
+    <ProjectGuid>{386CC69B-8C5A-4F59-8A0B-F04FF283EAD5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ClassTemplates</RootNamespace>
+    <RootNamespace>LambdaBasics</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

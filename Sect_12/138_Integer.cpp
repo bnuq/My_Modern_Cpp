@@ -1,4 +1,4 @@
-#include "Integer.h"
+#include "138_Integer.h"
 #include <iostream>
 Integer::Integer() {
 	std::cout << "Integer()" << std::endl;
@@ -34,8 +34,8 @@ Integer::~Integer() {
 	delete m_pInt;
 }
 
-
-
-
-
-
+std::ostream & operator<<(std::ostream & out, const Integer & obj)
+{
+	out << *obj.m_pInt;
+	return out;
+}

@@ -1,4 +1,5 @@
 #include <iostream>
+
 template<typename T,int size>
 class Stack {
 	T m_Buffer[size];

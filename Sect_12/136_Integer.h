@@ -13,7 +13,7 @@ public:
 	Integer(const Integer &obj);
 
 	//Move constructor
-	Integer(Integer &&obj);
+	Integer(Integer &&obj) noexcept;
 
 	int GetValue()const;
 	void SetValue(int value);

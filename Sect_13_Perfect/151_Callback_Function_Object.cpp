@@ -67,8 +67,10 @@ int main() {
 	std::cout << std::endl;
 
 	// callback by function object 
-	//Sort(arr, comp);
-	Sort(arr, funcCompDec);
+	Sort(arr, comp);
+
+	// Function Pointer »ç¿ë
+	//Sort(arr, funcCompDec);
 
 	for (auto x : arr) {
 		std::cout << x << " ";

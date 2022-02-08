@@ -30,17 +30,22 @@ void ForEach(T(&arr)[size], Callback operation) {
 		operation(arr[i]);
 	}
 }
+
+// Lambda Expression 이 내부적으로 구현될 Function Object 모습
 template<typename T>
 struct __Unnamed {
 	int offset;
 	__Unnamed(int off) :offset(off) {
 
 	}
-	void operator()(T &x) {
+	void operator()(T &x) /*const*/ {
 		x += offset;
 		++offset;
 	}
 };
+
+
+
 class Product {
 	std::string name;
 	float price;
@@ -61,65 +66,71 @@ public:
 		return price;
 	}
 };
+
+
+
 int main() {
 
-	atexit([]() {
-		std::cout << "Program is exitting..." << std::endl; 
-	});
-	/*Product p{ "Watch", 500 };
-	p.AssignFinalPrice();
-	std::cout << p.GetPrice() << std::endl;*/
-
-	//Lambda within a lambda
-	[](int x) {
-		x *= 2;
-		[](int x) {
-			std::cout << x << std::endl; 
-		}(x);
-	}(5);
+	// Function Object 이용
 	__Unnamed<int> n(3);
 	int x = 5;
 	n(x);
+
+
+	
+	// Lambda Expression 이용
 	int arr[]{ 1,6,8,4,0 };
+	// 그대로 출력
 	ForEach(arr, [](auto x) {
 		std::cout << x << " ";
 	});
-	std::cout << std::endl; 
+	std::cout << std::endl;
+
 	int offset = 0;
-	/*ForEach(arr, [offset](auto &x) {
+	ForEach(arr, [offset](auto &x) {
 		x += offset;
-	});*/
+	});
+	ForEach(arr, [offset](auto &x)mutable {
+		x += offset;
+		++offset;
+	});
 
-	//ForEach(arr, [offset](auto &x)mutable {
-	//	x += offset;
-	//	++offset;
-	//});
-
+	
+	
+	// Caputure List => 출력하는 방법
+	// reference 이용, caputure by reference
 	int sum{};
+	ForEach(arr, [&sum](auto& x) {
+		sum += x;
+		});
+	std::cout << "Sum is " << sum << std::endl;
+
+
+	// 변수를 모두 capture by reference
+	// sum 이 내부 멤버 변수가 아니니까, 변경 가능
+	ForEach(arr, [&](auto& x) {
+		sum += x;
+		});
+	std::cout << "Sum is " << sum << std::endl;
+
+
+	// 모두 capture by value
+	ForEach(arr, [=](auto& x) mutable {
+		sum += x;
+		});
+	std::cout << "Sum is " << sum << std::endl;
+
+
+
+	// caputure 방식을 각각 지시
+	sum = 0;
 	ForEach(arr, [&, offset](auto &x) {
 		sum += x;
 	});
 	std::cout << "Sum:" << sum << std::endl;
-	ForEach(arr, [](auto x) {
-		std::cout << x << " ";
-	});
-	std::cout << std::endl;
+
+
 
 	return 0;
 }
 
-void OldCode(){
-	int arr[]{ 1,6,8,4,0 };
-	for (auto x : arr) {
-		std::cout << x << " ";
-	}
-	std::cout << std::endl;
-	auto comp = [](auto x, auto y) {
-		return x > y;
-	};
-	Sort(arr, comp);
-	for (auto x : arr) {
-		std::cout << x << " ";
-	}
-	std::cout << std::endl;
-}

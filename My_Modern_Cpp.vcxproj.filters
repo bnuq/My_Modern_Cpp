@@ -2,7 +2,17 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="NewFilter1">
-      <UniqueIdentifier>{f7048a4c-386e-41e8-b0e6-e4f2485968fc}</UniqueIdentifier>
+      <UniqueIdentifier>{3b171789-5248-4768-90e9-4f567f892fc6}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sect_14\180_STL_Project.cpp">
+      <Filter>NewFilter1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sect_14\180_Contact.h">
+      <Filter>NewFilter1</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

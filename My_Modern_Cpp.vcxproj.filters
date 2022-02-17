@@ -5,9 +5,4 @@
       <UniqueIdentifier>{3b171789-5248-4768-90e9-4f567f892fc6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Sect_15\185_186_Mutex_lock_guard.cpp">
-      <Filter>NewFilter1</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>

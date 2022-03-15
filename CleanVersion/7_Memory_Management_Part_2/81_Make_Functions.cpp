@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 void num_1() {
 	/*
 		Modern C++ discourages manual memory management
@@ -14,17 +13,17 @@ void num_1() {
 	*/
 
 	// Heap 에 직접 접근하는 방식
-	std::unique_ptr<int> p1{ new int };
+	std::unique_ptr<int> p1{ new int }; // new operator 로 메모리를 직접 할당한다
 
 	// Make Function 사용
 	// Factory Function 처럼 동작한다 = 객체를 반환하는 함수, create an instance of a class
 	/*
 		make_unique = unique_ptr 을 만들어서 리턴
-		<> = heap 에 할당하고자 하는 타입 명시
+		<> = heap 에 할당하고자 하는 타입, 리소스에 저장해 관리하고자 하는 타입을 명시
 		() = 해당 타입 constructor 에 필요한 arguments
 		
 		heap 에 메모리를 할당하고, 그 메모리를 가리키는 포인터를 포함하는
-		스마트 포인터를 만든 다음, 리턴한다
+		스마트 포인터를 만든 다음, 스마트 포인터 객체를 리턴한다
 	*/
 	auto p2 = std::make_unique<int>(9);
 }
@@ -46,7 +45,8 @@ void num_2() {
 
 
 	// For dynamic array with unique pointer
-	// size 는 지정가능, cannot initialze
+	// arguments 에 size 지정
+	// 초기화 arguments 는 못 넣는다, cannot initialze
 	auto pArr = std::make_unique<int[]>(5);
 	pArr[0] = 10;
 }
@@ -58,7 +58,8 @@ void num_3() {
 
 
 	// For dynamic array with shared pointer
-	// size 는 지정가능, cannot initialze
+	// arguments 에 size 지정
+	// 초기화 arguments 는 못 넣는다, cannot initialze
 	// std::make_shared for arrays was added in C++20 standard
 	auto pArr = std::make_shared<int[]>(5);
 	pArr[0] = 10;
@@ -67,12 +68,13 @@ void num_3() {
 	/*
 		shared pointer is implemented differently than a unique pointer
 		= store extra information related to the underlying pointer
-		= the control block 에 저장
+		= the control block 이 추가적으로 생성
 		
 		make_shared 를 사용하면, underlying pointer 를 위한 메모리와
 		control block 을 위한 메모리를 동시에 할당
 		= new 를 한번만 사용한다
 		= delete 도 한번만 사용한다
+		=> 호출 횟수가 감소한다
 	*/
 }
 

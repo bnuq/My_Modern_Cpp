@@ -7,35 +7,27 @@ using namespace std;
 	정수 값에 이름을 붙여서 사용
 	매크로나 상수 선언 없이 한번에 사용할 수 있다
 	정해진 범위의 값만 가진다
-
-	use 'enum' keyword
-	restricted range of values
-	called symobolic constants, enumerator
-		internally represented as undefined integral types
-		enumerator -> integer, but not the other way
-			Color c = Red; 일 때
-			c = 1; -> 불가능
-			c = static_cast<Color>(1);
-			int x = Red; -> 가능
-	Defalut value = 0, but users can assign any value
-	옆으로 갈때마다 1 씩 증가
-	Enumerator visible in which defined
 */
 
-
-// enum 정의 -> { } 중괄호로 초기화 = uniform initialization
-// enum type 과 enumulator 의 범위는 같다 -> enumulator 이름이 같으면 중복이다
+/*
+	enum 정의 -> { } 중괄호로 초기화 = uniform initialization
+	enum type = Color
+	enumulator = RED, GREEN, BLUE
+	enumulator 는 다른 enum type 의 enumulator 와 이름이 중복되면 안된다
+ */
 enum Color { RED, GREEN, BLUE };
 
 // enumulator 이름 중복 에러
-// 그래서 unscoped enum 은 더이상 사용하지 않는다
+// 그래서 이러한 unscoped enum 은 더이상 사용하지 않는다
 // enum Traffic { RED, GREEN, BLUE };
 
 
-// 앞서 정의한 enum = enumulated type = 타입처럼 사용한다 -> 내부적으로는 정수 취급
-// enumerator 의 범위가 타입을 벗어나니까, 경고 알람이 들어왔다
+// 앞서 정의한 Color = enumulated type = 타입처럼 사용한다 -> 내부적으로는 정수 취급
+// enumerator 를 enum type 없이 혼자 사용할 수 있다
+// => enumerator 의 범위가 enum type 을 벗어sksek => 경고 알람이 뜨는 이유
 void FillColor(Color color)
 {
+	// enumerator 인 RED, GREEN, BLUE 를 enum type Color 없이, 단독적으로 사용할 수 있다 => 위험
 	if (color == RED) {
 		cout << "RED" << endl;
 	}
@@ -50,7 +42,6 @@ void FillColor(Color color)
 
 void num_1() {
 	// Enumulator 정의
-	
 	Color c = RED;
 	
 	// 정의된 enum type 만 넘길 수 있다
@@ -62,22 +53,22 @@ void num_1() {
 
 	// 아니면 static_cast 를 통해 명시적으로 타입변환을 지시
 	FillColor(static_cast<Color>(2));
-
 }
 
 
 
+
 /*
-	scoped enum
-	enumerator 의 범위가 enumerated type 내부로 한정되는 것
+	scoped enum => enumerator 의 범위가 생겨났다,
+	enumerator 의 범위가 enumerated type 내부로 한정된다, enum type 과 사용해야 한다
 	바깥에서 enumerator 를 볼 수 없게 된다
 	반드시 enum type 을 통해서 enumerator 접근
 
 	enum class
 
-	선호
+	선호방법
 */
-enum class Color2 {RED, GREEN, BLUE}; // 이제 enumerator 가 겹쳐도 괜찮다
+enum class Color2 {RED, GREEN, BLUE}; // 이제 enumerator 가 겹쳐도 괜찮다 => enum type 을 먼저 밝히고 사용하기 때문에
 enum class Traffic { RED, GREEN, BLUE };
 
 
@@ -103,12 +94,13 @@ void num_2() {
 	// 명시적 타입 변환만 허용
 	int x = static_cast<int>(Color2::RED);
 	Color2 c = static_cast<Color2>(2);
+
+	FillColor2(c);
+	// FillColor2(x);  integer -> enum type 으로 자동변환 불가능
 }
 
 
-
-// enumerator 가 저장되는 타입을 int 가 아닌, 다른 타입으로도 설정할 수 있다
-// 그래도 일단 정수형 타입이여야 겠지
+// enumerator 가 저장되는 타입을 int 가 아닌, 다른 정수형 타입으로 저장할 수 있다
 // : => enum type 이 저장되는 타입 지정
 // assignment => enumerator 의 값을 지정할 수 있다, 이후 옆으로 갈수록 1 씩 증가
 enum class Color3 : long {RED = 100, GREEN, BLUE = 105};
@@ -121,4 +113,12 @@ int main()
 {
 	num_1();
 	num_2();
+
+	Color c1 = RED;
+	std::cout << c1 << std::endl; // unscoped enum 은 암시적으로 int 로 자동변환 => 출력이 되지만
+
+	Color3 c = Color3::GREEN;
+	// std::cout << c << std::endl;  scoped enum 에서는,  enumerator 가 정수형 타입으로 저장되도 자동으로 int 로 변환되지 않는다
+	std::cout << static_cast<int>(c) << std::endl; // 100 + 1 = 101 출력
+
 }

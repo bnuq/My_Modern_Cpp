@@ -10,7 +10,7 @@ public:
 		cout << "A constructor" << endl;
 	}
 	~A()
-	{
+	{ 
 		cout << "~A destructor" << endl;
 	}
 
@@ -61,10 +61,18 @@ public:
 
 
 
-class C : public Aa, public Ab
-{
+class C : public Aa, public Ab {
 public:
-	C(int a, int b, int c) : A{ a }, Aa{ b, a }, Ab{ c, a }
+	/*
+		virtual inheritance 인 A class 에 대해서
+		각 virtual pointer 가 A 객체를 가리켜야 한다
+		따라서, 직접 생성자를 호출해서 => virtual pointer 가 하나의 A 객체를 가리키도록 한다
+		
+		이후 다른 base classes 생성자를 호출 => 이미 virtual pointer 가 가리키고 있으므로 A 생성자를 만들지는 않는다
+
+		생성자들의 호출 순서는 상관없다
+	*/
+	C(int a, int b, int c) :  A{ a }, Aa{ b, a }, Ab{ c, a }
 	{
 		cout << "C constructor" << endl;
 	}

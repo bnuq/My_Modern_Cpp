@@ -1,12 +1,14 @@
 #include "Account.h"
 #include <iostream>
 
+// static member variable 은 cpp file 에서 따로 정의를 한다
 int Account::s_ANGenerator = 1000;
 
 
 Account::Account(const std::string& name, float balance)
     : m_Name{name}, m_Balance{balance}
 {
+    // 생성할 때마다 static member 값을 하나 증가시키고, 그 숫자를 객체에 할당
     m_AccNo = ++s_ANGenerator;
 }
 

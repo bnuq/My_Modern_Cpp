@@ -20,7 +20,9 @@ int main()
 //	return 0;
 
 	Checking checking{ "for_check", 1000 };
-	Savings savings{ "for_save", 1000, 0.5 };
+	Savings savings{ "for_save", 1000, 0.8};
+
+	
 
 	Transact(&checking);
 	Transact(&savings);

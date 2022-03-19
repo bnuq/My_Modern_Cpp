@@ -31,19 +31,19 @@ void Transact(Account* pAccount)
 	pAccount->AccumulateInterest(); // virtual function
 
 	/*
-	일단 무조건 pAccount 가 가리키는 Account class => Checking class 라고 생각
-	무조건 맞다고 생각하고 down cast
-	Checking* pChecking = static_cast<Checking*>(pAccount);
-
-	Checking class 의 멤버함수 호출 => 사실 Checking class 를 가리킨 게 아니였을 때 에러 발생
-	std::cout << "Checking Class Minimum Balance " << pChecking->GetMinimumBalance() << std::endl;
-
-	typeid 사용 => 실제 가리키고 있는 타입이 Checking class 타입인지를 확인
-	if (typeid(*pAccount) == typeid(Checking)) {
-		진짜로 맞을 때만, Checking class 로 down cast 한다
+		일단 무조건 pAccount 가 가리키는 Account class => Checking class 라고 생각
+		무조건 맞다고 생각하고 down cast
 		Checking* pChecking = static_cast<Checking*>(pAccount);
+
+		Checking class 의 멤버함수 호출 => 사실 Checking class 를 가리킨 게 아니였을 때 에러 발생
 		std::cout << "Checking Class Minimum Balance " << pChecking->GetMinimumBalance() << std::endl;
-	}	
+
+		typeid 사용 => 실제 가리키고 있는 타입이 Checking class 타입인지를 확인
+		if (typeid(*pAccount) == typeid(Checking)) {
+			진짜로 맞을 때만, Checking class 로 down cast 한다
+			Checking* pChecking = static_cast<Checking*>(pAccount);
+			std::cout << "Checking Class Minimum Balance " << pChecking->GetMinimumBalance() << std::endl;
+		}	
 	*/
 
 

@@ -13,7 +13,9 @@ void Write() {
 
 	// 생성 후, open() method => path 지정
 	std::ofstream out{};
-	out.open(R"(120_data.txt)");
+	// 해당 path 에 원하는 file 이 없으면,
+	// output 하기 위해서 하나 만든다
+	out.open(R"(./Files/120 data.txt)");
 
 	// << operator 로 원하는 값을 파일로 내보낸다, out
 	out << "Hello world" << std::endl;
@@ -31,7 +33,7 @@ void Read() {
 	// 역시 path 를 처음부터 지정하거나, open() 를 이용해서 나중에 지정
 	//std::ifstream input{ "data.txt" };
 	std::ifstream input{};
-	input.open(R"(120_data.txt)");
+	input.open(R"(./Files/120 data.txt)");
 	
 	std::string message;
 	// string 을 공백포함해서, 한 줄 다 읽어올 때는 getline() 사용

@@ -7,8 +7,8 @@
 #include <typeinfo>
 
 
-int main()
-{
+int main() {
+
 	// base class ref 로 child class 객체를 가리킨다
 
 	Checking ch("Boo", 2000, 30);

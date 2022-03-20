@@ -8,8 +8,8 @@
 #include <typeinfo>
 
 
-int main()
-{
+int main() {
+
 	Checking ch("Boo", 2000, 30);
 	Account* pAccount = &ch;
 	Transact(pAccount);

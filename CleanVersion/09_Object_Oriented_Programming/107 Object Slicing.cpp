@@ -3,8 +3,8 @@
 #include "./99_105_Bank_Project/Checking.h"
 #include "./99_105_Bank_Project/Savings.h"
 
-int main()
-{
+int main() {
+
 	// child class = base class + own attributtes
 	Checking ch{ "Boo", 100 };
 

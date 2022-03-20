@@ -7,7 +7,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="12_Templates\Integer.cpp" />
-    <ClCompile Include="12_Templates\129 Intro to Templates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="12_Templates\Integer.h" />

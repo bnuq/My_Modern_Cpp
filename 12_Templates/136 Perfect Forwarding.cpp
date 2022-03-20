@@ -91,5 +91,9 @@ int main() {
 
 	std::cout << "Case 3" << std::endl;
 	auto emp = Create("Umar", Integer{ 100 });
+
+	val.test();
+
+
 	return 0;
 }

@@ -18,8 +18,8 @@
 	아니면 base class 를 포함하고 있는 child class 의 멤버함수를 사용하고 싶은지
 		=> 이 경우에 base class 에서 멤버함수를 정의할 때 virtual keyword 를 붙인다
 */
-void Transact(Account* pAccount)
-{
+void Transact(Account* pAccount) {
+
 	std::cout << "Transaction started" << std::endl;
 	std::cout << "Initial balance" << pAccount->GetBalance() << std::endl;
 

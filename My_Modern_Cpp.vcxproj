@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="12_Templates\129 Intro to Templates.cpp" />
     <ClCompile Include="12_Templates\Integer.cpp" />
   </ItemGroup>
   <ItemGroup>

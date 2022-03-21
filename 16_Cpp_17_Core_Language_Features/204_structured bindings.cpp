@@ -1,3 +1,10 @@
+/*
+	Structured Binding
+	무조건 auto 를 써야 한다
+	이미 만든 변수를 다시 Structured Binding 에 쓰고 싶다면
+	std::tie() 를 이용한다
+*/
+
 #include <iostream>
 #include <map>
 
@@ -20,8 +27,8 @@ int main() {
 		auto name = p.m_Name ;
 		auto age = p.m_Age ;
 	*/
-	// Structure Binding 을 사용하면, 각 멤버 변수에 동시에 접근할 수 있다
-	// const, volatile, reference 모두 가능
+	// Structured Binding 을 사용하면, 각 멤버 변수에 동시에 접근할 수 있다
+	// const, volatile, reference 모두 전달 가능
 	const auto& [name, age] = p;
 	std::cout << p.m_Age << std::endl;
 

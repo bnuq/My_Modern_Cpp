@@ -114,3 +114,23 @@ int main()
 	// Capture List 에 넘길 때, copy by value ~ 기존 offset 값은 변화 없음
 	std::cout << "offset is " << offset << std::endl;
 }
+
+
+/*
+	[offset](auto &x) mutable {
+		x += offset;
+		offset++;
+	}
+
+	Lambda Expression 이 만드는 Function Object 는 아마 다음과 같을 것이다
+*/
+template<typename T>
+struct __Unnamed {
+	int offset; // 멤버 변수로, 캡처 리스트에서 받은 변수를 가짐
+	__Unnamed(int off) :offset(off) { // Captured by value
+	}
+	void operator()(T& x) /*const*/ { // 원래 const member function 이지만, mutable 에 의해 사라짐
+		x += offset;
+		++offset;
+	}
+};

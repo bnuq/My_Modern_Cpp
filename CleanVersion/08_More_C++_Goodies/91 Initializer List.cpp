@@ -62,7 +62,8 @@ int main() {
 	auto values = { 1,2,3,4 };
 
 	
-	
+	// Uniform Initialization 을 작성 => 맞는 arguments 를 받는 생성자가 없다
+	// 그런데 initializer_list 를 받는 생성자가 있으면 => Uniform Initialization 을 initializer_list 가 받아 해결한다
 	Bag b{ 3,1,8 };
 	//b.Add(3);
 	//b.Add(1);

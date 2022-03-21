@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+
 // Primary Class Template
 template<typename T>
 class PrettyPrinter {
@@ -20,21 +21,21 @@ public:
 
 
 // Explicit Specialization for std::vector< std::vector<int> >
-// Print member function 하나에 대해서만 진행
+// Print() member function 하나에 대해서만 진행
 template<>
-void PrettyPrinter<std::vector< std::vector<int> >>::Print()
-{
+void PrettyPrinter<std::vector< std::vector<int> >>::Print() {
+
 	std::cout << "{" << std::endl;
-	for (const auto& vec : *m_pData)
-	{
-		for (const auto& x : vec)
-		{
+	for (const auto& vec : *m_pData) {
+		for (const auto& x : vec) {
 			std::cout << x;
 		}
 		std::cout << std::endl;
 	}
 	std::cout << "}" << std::endl;
 }
+
+
 
 int main() {
 

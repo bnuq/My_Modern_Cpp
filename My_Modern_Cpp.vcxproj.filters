@@ -5,10 +5,4 @@
       <UniqueIdentifier>{3b171789-5248-4768-90e9-4f567f892fc6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="12_Templates\Integer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="12_Templates\Integer.h" />
-  </ItemGroup>
 </Project>

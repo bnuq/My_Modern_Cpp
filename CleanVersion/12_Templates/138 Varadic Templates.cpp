@@ -96,6 +96,7 @@ int main() {
 	
 	// 함수 호출에 필요한 arguments 를 그냥 아무 타입들을
 	// 개수 제한 없이 넣는다 => 이거 자체가 parameter pack
+	// 0 개 이상의 arguments 를 그냥 받는 것이 parameter pack
 	Print(1, 2.5, 3, "4");
 
 

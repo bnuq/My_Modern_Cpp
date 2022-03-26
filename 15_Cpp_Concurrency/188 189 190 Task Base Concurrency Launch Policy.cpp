@@ -18,6 +18,9 @@ int Operation(int count) {
 	return sum;
 }
 
+
+
+
 int main() {
 	using namespace std::chrono_literals;
 	std::cout << "Main() thread start" << std::endl;

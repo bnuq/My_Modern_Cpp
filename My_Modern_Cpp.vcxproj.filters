@@ -1,12 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <ClCompile Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contact.cpp" />
-    <ClCompile Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contacts.cpp" />
-    <ClCompile Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_STL_Project.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contact.h" />
-    <ClInclude Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contacts.h" />
-  </ItemGroup>
-</Project>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />

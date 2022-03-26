@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 
-// Windows 10 ���� �߰��� window api �������
+//Window 운영체제 에서만 사용 가능한, Window api 헤더파일
 #include <Windows.h>
 
 
@@ -9,7 +9,7 @@ void Process() {
 	// std::this_thread ��� namespace => ���� thread function �� ����ϴ� �����忡 ���� ������ ���� �� �ִ�
 	
 	// std::this_thread::get_id() => ���� ���ư��� �������� id ����
-	std::cout << "Threadid:" << std::this_thread::get_id() << std::endl;
+	std::cout << "Thread id:" << std::this_thread::get_id() << std::endl;
 	for (int i = 0; i < 10; ++i) {
 		// std::this_thread::sleep_for => ������ ���߰� �Ѵ�, �Ͻ� ����
 		// std::chrono::seconds(1) => 1�ʶ�� �ð�
@@ -18,8 +18,13 @@ void Process() {
 	}
 }
 
+
+
+//Main Thread
 int main() {
-	std::thread t1(Process);
+
+	//Joinable Thread 를 만들고
+	std::thread t1{ Process };
 
 	// thread::native_handle() => Returns the native type of the thread, �����쿡���� HANDLE
 	// On Linux, the native type is pthread_t

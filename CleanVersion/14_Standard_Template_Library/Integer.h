@@ -13,6 +13,8 @@ public:
 	//Copy Assignment Operator
 	Integer& operator=(const Integer& obj);
 
+
+//Move Operation => noexcept 를 지정해준다
 	//Move constructor
 	Integer(Integer &&obj) noexcept;
 	//Move Assignment Operator

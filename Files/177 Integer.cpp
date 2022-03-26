@@ -1,4 +1,4 @@
-#include "175_Integer.h"
+#include "Integer.h"
 #include <iostream>
 Integer::Integer() {
 	std::cout << "Integer()" << std::endl;
@@ -10,7 +10,7 @@ Integer::Integer(int value) {
 	m_pInt = new int(value);
 }
 
-Integer::Integer(const Integer & obj) {
+Integer::Integer(const Integer& obj) {
 	std::cout << "Integer(const Integer&)" << std::endl;
 	m_pInt = new int(*obj.m_pInt);
 }
@@ -18,7 +18,7 @@ Integer::Integer(const Integer & obj) {
 Integer& Integer::operator=(const Integer& obj)
 {
 	std::cout << "operator=(const Integer&)" << std::endl;
-	
+
 	// 자기 자신에게는 대입하지 않는다
 	if (this != &obj)
 	{
@@ -30,15 +30,12 @@ Integer& Integer::operator=(const Integer& obj)
 
 
 
-
-
-
-Integer::Integer(Integer && obj) noexcept {
+//Move Opearation => noexcept
+Integer::Integer(Integer&& obj) noexcept {
 	std::cout << "Integer(int&&)" << std::endl;
 	m_pInt = obj.m_pInt;
 	obj.m_pInt = nullptr;
 }
-
 Integer& Integer::operator=(Integer&& obj) noexcept
 {
 	std::cout << "operator=(Integer&&)" << std::endl;
@@ -53,6 +50,8 @@ Integer& Integer::operator=(Integer&& obj) noexcept
 	return *this;
 }
 
+
+
 int Integer::GetValue() const {
 	return *m_pInt;
 }
@@ -66,7 +65,7 @@ Integer::~Integer() {
 	delete m_pInt;
 }
 
-std::ostream & operator<<(std::ostream & out, const Integer & obj)
+std::ostream& operator<<(std::ostream& out, const Integer& obj)
 {
 	out << *obj.m_pInt;
 	return out;

@@ -4,11 +4,12 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
+int main() {
 
-	// enum class 정보는 contact headerfile 에서 가져올 수 있다
+	//enum class 정보는 contact headerfile 에서 가져올 수 있다
 	std::vector<Contact> vecCon{
+		//r-value 로 초기화
+
 		Contact{std::string{"AAA"}, std::string{"BB"}, std::string{"CC"}, std::string{"DD"}, "gehenna", Group::Aquaintance},
 		
 		Contact{"Jana", "Lee", "12", "99", "millenium", Group::Aquaintance},
@@ -20,7 +21,7 @@ int main()
 		Contact{"Aminen", "Shady", "23", "33", "gehenna", Group::Aquaintance}
 	};
 
-	Contacts contactsBook{ vecCon };
+	Contacts contactsBook{ std::move(vecCon) }; //l-value 가 넘어가는 거였네
 
 	//
 	//// 1-1. first name 으로 정렬

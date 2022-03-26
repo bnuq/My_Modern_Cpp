@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="14_Standard_Template_Library\175 179 Container Changes.cpp" />
-    <ClCompile Include="14_Standard_Template_Library\Integer.cpp" />
+    <ClCompile Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contact.cpp" />
+    <ClCompile Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contacts.cpp" />
+    <ClCompile Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_STL_Project.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="14_Standard_Template_Library\Integer.h" />
+    <ClInclude Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contact.h" />
+    <ClInclude Include="CleanVersion\14_Standard_Template_Library\180_STL_Project\180_Contacts.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

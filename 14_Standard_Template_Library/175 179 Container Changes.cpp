@@ -1,22 +1,22 @@
 #include <iostream>
 #include <string>
+
+//File 이용
 #include <fstream>
 #include <filesystem>
 
-
+//STL
 #include <vector>
 #include <list>
 #include <deque>
-
 #include <set>
 
+#include "Integer.h"
 
-#include "175_Integer.h"
 
-
-void codeFrom175()
-{
-	// C++ 11 부터 모든 container can use uniform initialization
+void codeFrom175() {
+	
+	//C++ 11 부터 모든 container can use uniform initialization
 	std::vector<int> vint{ 1,2,3,4 };
 
 	std::vector<Integer> VInt;

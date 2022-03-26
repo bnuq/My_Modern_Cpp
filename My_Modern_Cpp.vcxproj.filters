@@ -5,4 +5,11 @@
       <UniqueIdentifier>{3b171789-5248-4768-90e9-4f567f892fc6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="14_Standard_Template_Library\175 179 Container Changes.cpp" />
+    <ClCompile Include="14_Standard_Template_Library\Integer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="14_Standard_Template_Library\Integer.h" />
+  </ItemGroup>
 </Project>

@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="14_Standard_Template_Library\175 179 Container Changes.cpp" />
+    <ClCompile Include="14_Standard_Template_Library\Integer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="14_Standard_Template_Library\Integer.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
